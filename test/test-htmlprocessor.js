@@ -143,6 +143,15 @@ describe('htmlprocessor', function () {
     assert.equal('bar/foo.css', hp.blocks[0].dest);
   });
 
+  it('should take into consideration source files use Protocal-relative URL', function () {
+    var htmlcontent = '<!-- build:css //bar/foo.css -->\n' +
+    '<link rel="stylesheet" href="bar.css">\n' +
+    '<!-- endbuild -->';
+    var hp = new HTMLProcessor('', '', htmlcontent, 3);
+    assert.equal(1, hp.blocks.length);
+    assert.equal('bar/foo.css', hp.blocks[0].dest);
+  });
+
   it('should keep track of require.js location', function () {
     var htmlcontent = '<!-- build:js scripts/amd-app.js -->\n' +
     '<script data-main="scripts/main" src="foo/require.js"></script>\n' +
