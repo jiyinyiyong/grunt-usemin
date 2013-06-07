@@ -36,5 +36,11 @@
   },
   "licenses": {
     "type": "BSD"
-  }
+  },
+  "readmeFilename": "README.md",
+  "gitHead": "1538252ec4b7006e6330d535f491017cb4439a63",
+  "directories": {
+    "test": "test"
+  },
+  "license": "BSD"
 }
